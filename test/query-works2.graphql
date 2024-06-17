@@ -1,0 +1,29 @@
+query {
+  articlesA: Articles {
+    docs {
+      id
+      title
+      _status
+      contributors {
+        name
+      }
+    }
+  }
+
+  Home {
+    top_right_featured {
+      __typename
+      relationTo
+      value {
+        ... on Article {
+          id
+          title
+          _status
+          contributors {
+            name
+          }
+        }
+      }
+    }
+  }
+}

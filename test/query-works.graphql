@@ -1,0 +1,19 @@
+query {
+  articlesA: Articles {
+    docs {
+      id
+      title
+      _status
+      contributors {
+        name
+      }
+    }
+  }
+
+  contributors: Contributors {
+    docs {
+      id
+      name
+    }
+  }
+}

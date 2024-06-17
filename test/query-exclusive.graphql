@@ -1,0 +1,23 @@
+query {
+  articlesA: Articles(where: { id: { less_than: 3 } }) {
+    docs {
+      id
+      title
+      _status
+      contributors {
+        name
+      }
+    }
+  }
+
+  articlesB: Articles(where: { id: { greater_than_equal: 3 } }) {
+    docs {
+      id
+      title
+      _status
+      contributors {
+        name
+      }
+    }
+  }
+}

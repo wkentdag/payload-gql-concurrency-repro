@@ -9,6 +9,11 @@ app.get('/', (_, res) => {
   res.redirect('/admin')
 })
 
+app.use((req, res, next) => {
+  payload.logger.info(`${req.method} ${req.path}: ${res.statusCode}`);
+  next();
+});
+
 const start = async () => {
   // Initialize Payload
   await payload.init({
