@@ -1,0 +1,24 @@
+query {
+  articlesA: Articles {
+    docs {
+      id
+      title
+      _status
+      contributors {
+        name
+      }
+    }
+  }
+
+  articlesB: Articles {
+    docs {
+      id
+      title
+      _status
+      # still reproducible even with alias
+      foo: contributors {
+        name
+      }
+    }
+  }
+}
